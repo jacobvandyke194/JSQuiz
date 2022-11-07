@@ -5,12 +5,14 @@ let answerButtons = document.querySelector('.quizBox');
 let resultsButton = document.querySelector('.seeResults');
 let quizBox = document.querySelector('.quizBox');
 let timeEl = document.querySelector('.timeEl')
+let nameEl = document.querySelector('.nameInput');
 let userScore = 0;
 startButton.addEventListener('click', firstQuestion);
 
 
 
 function firstQuestion(){
+    nameEl.classList.add('hide');
     answerButtons.classList.remove('hide')
     startBox.classList.add('hide')
     question.classList.remove('hide')
@@ -180,13 +182,21 @@ function seeResult(){
     resultsButton.classList.remove('hide');
     resultsButton.addEventListener('click', userResults)
     question.innerHTML = "";
+
+    let name = document.createElement('input');
+
 }
 
 function userResults(){
-    startBox.classList.add('hide');
+    resultsButton.classList.add('hide');
+    startButton.classList.remove('hide');
+    startButton.innerHTML = "Restart";
     document.body.style.backgroundColor = "rgb(109, 116, 109)"
     let finalResults = document.createElement("h1");
-    finalResults.innerHTML = `Your Final Score is ${userScore}`
+    finalResults.innerHTML = `Your Final Score is ${userScore}` + " out of 4!"
     document.body.appendChild(finalResults);
     finalResults.classList.add('quizContainer');
+    localStorage.setItem('name', nameEl.value);
+    localStorage.setItem('score', userScore);
+
 }
