@@ -43,3 +43,9 @@ body{
 .hide{
     display: none;
 }
+
+.timeEl{
+    padding: 0;
+    border: 0;
+    
+}
