@@ -10,7 +10,7 @@ In this project the user will presented with a landing page regarding a Coding Q
 
 ## Contributors
 Jacob Van Dyke:
-github.com/jacobvandyke194
+[GitHub](github.com/jacobvandyke194)
 
 ## Application View: 
 
